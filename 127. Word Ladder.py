@@ -23,25 +23,6 @@ Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","
 Output: 0
 Explanation: The endWord "cog" is not in wordList, therefore there is no valid transformation sequence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         if endWord not in wordList:
