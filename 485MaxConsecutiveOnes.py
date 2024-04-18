@@ -1,3 +1,6 @@
+#485. Max Consecutive Ones
+#Zhengyan Hu
+
 class Solution(object):
     def findMaxConsecutiveOnes(self, nums):
         dp = [0] * len(nums)
