@@ -1,5 +1,5 @@
-#485. Max Consecutive Ones(Easy)
-#Zhengyan Hu
+# 485. Max Consecutive Ones(Easy)
+# Zhengyan Hu
 
 class Solution(object):
     def findMaxConsecutiveOnes(self, nums):
