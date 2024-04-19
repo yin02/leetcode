@@ -57,7 +57,7 @@ class Solution:
         for trip in trips:
             frequency_dfs(trip[0], trip[1], -1)
 
-        def dp(node, parent):
+        def dfs_price(node, parent):
             node_price = price[node] * frequency[node]
             node_price_half = node_price // 2
 
@@ -65,13 +65,9 @@ class Solution:
                 if child == parent:             # avoid go back to parent node
                     continue
                 else:
-                    child_price, child_price_half = dp(child, node)
+                    child_price, child_price_half = dfs_price(child, node)
                     node_price = node_price + min(child_price, child_price_half)
                     node_price_half = node_price_half + child_price
             return node_price, node_price_half
 
-        return min(dp(0, -1))
-
-
-r = Solution
-print(r.minimumTotalPrice(r, n = 4, edges = [[0,1],[1,2],[1,3]], price = [2,2,10,6], trips = [[0,3],[2,1],[2,3]]))
+        return min(dfs_price(0, -1))
