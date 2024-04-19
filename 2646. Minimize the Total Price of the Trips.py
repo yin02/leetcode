@@ -57,7 +57,7 @@ class Solution:
         for trip in trips:
             dfs(trip[0], trip[1], -1)
 
-        def dp(node: int, parent: int) -> list[int]:
+        def dp(node, parent):
             node_price = price[node] * frequency[node]
             node_price_half = node_price // 2
 
