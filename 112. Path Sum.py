@@ -28,6 +28,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
+# Easy
 from typing import *
 
 

@@ -29,6 +29,7 @@
 # For the 1st trip, we choose path [0]. The price sum of that path is 1.
 # The total price sum of all trips is 1. It can be proven, that 1 is the minimum answer that we can achieve.
 
+# Hard
 from typing import *
 
 
@@ -70,7 +71,3 @@ class Solution:
             return node_price, node_price_half
 
         return min(dp(0, -1))
-
-
-r = Solution
-print(r.minimumTotalPrice(r, n = 4, edges = [[0,1],[1,2],[1,3]], price = [2,2,10,6], trips = [[0,3],[2,1],[2,3]]))

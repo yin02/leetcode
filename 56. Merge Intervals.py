@@ -11,6 +11,7 @@
 # Output: [[1,5]]
 # Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 
+# Medium
 from typing import *
 
 
@@ -24,8 +25,3 @@ class Solution:
             else:
                 ans[-1][1] = max(ans[-1][1], end)
         return ans
-
-
-intervals = [[1,3],[2,6],[8,10],[15,18]]
-r = Solution
-print(r.merge(r, intervals))
