@@ -42,20 +42,20 @@ class Solution:
 
         frequency = [0] * n
 
-        def dfs(cur_node, end, parent):
+        def frequency_dfs(cur_node, end, parent):
             if cur_node == end:
                 frequency[cur_node] += 1
                 return True
             for child_node in graph[cur_node]:
                 if child_node == parent:        # avoid go back to parent node
                     continue
-                if dfs(child_node, end, cur_node):
+                if frequency_dfs(child_node, end, cur_node):
                     frequency[cur_node] += 1
                     return True
             return False
 
         for trip in trips:
-            dfs(trip[0], trip[1], -1)
+            frequency_dfs(trip[0], trip[1], -1)
 
         def dp(node, parent):
             node_price = price[node] * frequency[node]
@@ -71,3 +71,7 @@ class Solution:
             return node_price, node_price_half
 
         return min(dp(0, -1))
+
+
+r = Solution
+print(r.minimumTotalPrice(r, n = 4, edges = [[0,1],[1,2],[1,3]], price = [2,2,10,6], trips = [[0,3],[2,1],[2,3]]))
