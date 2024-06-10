@@ -1,0 +1,16 @@
+import sys
+def func():
+    n = input()
+    n = int(n)
+    combine = {}
+    for i in range(n):
+        list1=list(map(int, input().split()))
+        list2 = list(map(int, input().split()))
+        total = {i:value for i,value in zip(list1,list2)}
+        combine.update(total)
+    sorted_keys = [k for k,v in sorted(combine.items(),key = lambda x:x[1])]
+    result = ' '.join(map(str, sorted_keys))
+    print(result)
+    
+if __name__ == "__main__":
+    func()
