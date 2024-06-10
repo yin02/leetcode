@@ -1,0 +1,29 @@
+from queue import Queue
+q = Queue(maxsize = 0)
+m,n = map(int, input().split())
+arr = [] # store the grid
+vis = [[False for i in range(m)] for j in range(n)]
+dis = [[0 for i in range(m)] for j in range(n)]
+for i in range(m):
+    arr.append(list(map(int,input().split())))
+    for j in range(n):
+        if arr[i][j] == 0:
+            vis[i][j] == True
+            q.put((i,j))
+ans = 0
+dir = [[0,1],[0,-1],[1,0],[-1,0]]
+while q: #while not q.empty()
+    x,y = q.get
+    for i in range(4)
+        nx = x + dir[i][0]
+        ny  = y + dir[j][1]
+        if nx <0 or ny <0 or nx>= n or ny >=m:
+            continue
+        if vis[nx][ny] or arr[nx][ny] ==-1:
+            continue
+        vis[nx][ny] = True
+        q.put((nx,ny))
+        dis[nx][ny] = dis[x][y]+1
+        if arr[nx][ny] ==1:
+            ans += dis[x][y]
+print(ans)
